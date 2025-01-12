@@ -1,0 +1,1 @@
+Utrzymywanie użytku domeny.

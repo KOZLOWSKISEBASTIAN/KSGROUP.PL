@@ -1,0 +1,40 @@
+/* Resetowanie marginesów i ustawienie układu */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease;
+}
+
+/* Zmiana tła przy najechaniu */
+body.hover-active {
+    background-color: #000000;
+}
+
+/* Ustalenie pełnej responsywności dla embed (które wstawia SVG) */
+embed {
+    width: 90%;
+    height: 90%;
+    max-width: 660px; /* Maksymalna szerokość dla większych ekranów */
+    max-height: 280px; /* Maksymalna wysokość dla większych ekranów */
+    transition: filter 0.3s ease;
+}
+
+/* Efekty zmiany wyglądu przy najechaniu */
+body.hover-active embed,
+embed:hover {
+    filter: brightness(1) invert(1);
+}
+
+/* Responsywność na mniejszych ekranach */
+@media (max-width: 768px) {
+    embed {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,41 @@
+/* Resetowanie marginesów i ustawienie układu */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF00FF;
+    transition: background-color 0.3s ease;
+}
+
+/* Zmiana tła przy najechaniu */
+body.hover-active {
+    background-color: #000000;
+}
+
+/* Stylizacja SVG */
+svg {
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    width: auto;
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+}
+
+/* Efekty zmiany wyglądu przy najechaniu */
+body.hover-active svg,
+svg:hover {
+    filter: brightness(1) invert(23%) sepia(198%) saturate(5000%) hue-rotate(300deg);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

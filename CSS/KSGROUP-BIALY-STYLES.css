@@ -32,10 +32,28 @@ svg:hover {
     filter: brightness(1) invert(1);
 }
 
-/* Responsywność */
+/* Grafika WEBP - domyślnie ukryta */
+#krakow {
+    display: none;
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    width: auto;
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+}
+
+/* Stylizacja dla urządzeń mobilnych */
 @media (max-width: 768px) {
-    svg {
-        max-width: 100%;
-        max-height: 100%;
+    #KSGROUP-BIALY-SVG {
+        display: none;
     }
+    #krakow {
+        display: block;
+    }
+}
+
+/* Efekty zmiany wyglądu przy najechaniu na mobilnych */
+body.hover-active #krakow {
+    filter: brightness(1) invert(1);
 }

@@ -21,19 +21,28 @@
             background-color: #000000;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 90%;
+            max-height: 90%;
             height: auto;
             width: auto;
             object-fit: contain;
-            filter: none;
+            filter: brightness(0);
             transition: filter 0.3s ease;
         }
-        body:hover img {
+        body:hover img, img:hover {
             filter: brightness(1) invert(1);
         }
-        img:hover {
-            filter: brightness(1) invert(1);
+        @media (max-width: 768px) {
+            body:active {
+                background-color: #000000;
+            }
+            img:active {
+                filter: brightness(1) invert(1);
+            }
+            img {
+                max-width: 80%;
+                max-height: 80%;
+            }
         }
     </style>
 </head>
@@ -41,7 +50,7 @@
     <picture>
         <source srcset="KSGROUPLOGO.webp" type="image/webp">
         <source srcset="KSGROUPLOGO.png" type="image/png">
-        <img src="KSGROUPLOGO.png" alt="Logo KSGROUP">
+        <img src="KSGROUPLOGO.png" alt="KSGROUP LOGO">
     </picture>
 </body>
 </html>

@@ -9,6 +9,7 @@ html, body {
     align-items: center;
     background-color: #FFFFFF;
     transition: background-color 0.3s ease;
+    overflow: hidden; /* Zapobiega przewijaniu na mobilnych */
 }
 
 /* Zmiana tła przy najechaniu */
@@ -21,9 +22,11 @@ body.hover-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ustawienie wysokości kontenera na 100% */
-    width: 100%; /* Ustawienie szerokości kontenera na 100% */
-    position: relative; /* Pozycjonowanie względem rodzica */
+    height: 100vh; /* Wysokość pełnego ekranu */
+    width: 100vw; /* Szerokość pełnego ekranu */
+    position: absolute; /* Absolutne pozycjonowanie */
+    top: 0;
+    left: 0;
 }
 
 /* Stylizacja obrazka */

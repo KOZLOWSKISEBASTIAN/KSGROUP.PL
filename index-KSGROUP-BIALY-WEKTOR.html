@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="CSS/KSGROUP-BIALY-STYLES.css">
 </head>
 <body>
-    <!-- Użycie <picture> do rozróżnienia między formatami SVG a PNG/WebP -->
     <picture>
-        <!-- SVG dla desktopów -->
-        <source media="(min-width: 769px)" type="image/svg+xml" srcset="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg">
-        <!-- PNG/WebP dla urządzeń mobilnych -->
-        <source media="(max-width: 768px)" type="image/webp" srcset="GRAFIKA/KSGROUP-BIAŁY-LOGO-WEBP.webp">
-        <source media="(max-width: 768px)" type="image/png" srcset="GRAFIKA/KSGROUP-BIAŁY-LOGO-PNG.png">
-        <!-- Domyślny obrazek w przypadku problemów z formatami -->
-        <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
+        <source media="(max-width: 768px)" type="image/webp" srcset="GRAFIKA/KSGROUP-BIALY-WEBP.webp">
+        <object type="image/svg+xml" data="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" id="KSGROUP-BIALY-WEKTOR-SVG">
+            <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
+        </object>
     </picture>
     <script src="JS/KSGROUP-BIALY-SCRIPTS.js"></script>
 </body>

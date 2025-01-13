@@ -17,8 +17,9 @@ function activateEffect() {
     }
 }
 
-// Reakcja na dotyk na urządzeniach mobilnych
+// Dodanie efektów dla desktopowego SVG
 if (svg) {
+    // Reakcja na dotyk lub kliknięcie
     svg.addEventListener('touchstart', function () {
         if (body.classList.contains('hover-active')) {
             resetEffect();

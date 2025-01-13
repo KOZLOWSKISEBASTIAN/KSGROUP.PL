@@ -7,14 +7,16 @@ const isMobile = window.matchMedia('(max-width: 768px)').matches;
 // Ustawienie odpowiedniego obrazu
 function setImageSource() {
     if (isMobile) {
-        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-WEBP.webp'; // Zmieniamy na WEBP na urządzeniach mobilnych
+        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-WEBP.webp'; // Dla urządzeń mobilnych
     } else {
-        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-SVG.svg'; // Zostawiamy SVG dla desktopów
+        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-SVG.svg'; // Dla desktopów
     }
 }
 
 // Wywołanie funkcji na starcie
-setImageSource();
+window.addEventListener('load', function() {
+    setImageSource();
+});
 
 // Funkcja resetująca efekt
 function resetEffect() {

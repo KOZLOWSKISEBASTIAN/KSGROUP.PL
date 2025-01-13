@@ -16,25 +16,36 @@ body.hover-active {
     background-color: #000000;
 }
 
-/* Stylizacja SVG, żeby było responsywne */
-svg {
-    width: 100%;
+/* Ukrycie grafiki dla odpowiednich urządzeń */
+#desktop-graphic {
+    display: block;
+}
+#mobile-graphic {
+    display: none;
+}
+
+/* Stylizacja SVG */
+#KSGROUP-BIALY-WEKTOR-SVG {
+    max-width: 90%;
+    max-height: 90%;
     height: auto;
-    max-width: 660px; /* Maksymalna szerokość dla większych ekranów */
-    max-height: 280px; /* Maksymalna wysokość */
+    width: auto;
+    filter: brightness(0);
     transition: filter 0.3s ease;
 }
 
 /* Efekty zmiany wyglądu przy najechaniu */
-body.hover-active svg,
-svg:hover {
+body.hover-active #KSGROUP-BIALY-WEKTOR-SVG,
+#KSGROUP-BIALY-WEKTOR-SVG:hover {
     filter: brightness(1) invert(1);
 }
 
-/* Responsywność na mniejszych ekranach */
+/* Responsywność: Ukrywanie grafiki desktopowej na urządzeniach mobilnych */
 @media (max-width: 768px) {
-    svg {
-        width: 100%;
-        height: auto;
+    #desktop-graphic {
+        display: none;
+    }
+    #mobile-graphic {
+        display: block;
     }
 }

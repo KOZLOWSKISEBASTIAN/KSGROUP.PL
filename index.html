@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10;url=https://kozlowskisebastian.pl">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -13,6 +14,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        body:hover {
             background-color: #000000;
         }
         img {
@@ -21,14 +26,22 @@
             height: auto;
             width: auto;
             object-fit: contain;
+            filter: none;
+            transition: filter 0.3s ease;
+        }
+        body:hover img {
+            filter: brightness(1) invert(1);
+        }
+        img:hover {
+            filter: brightness(1) invert(1);
         }
     </style>
 </head>
 <body>
-<picture>
-    <source srcset="KSGROUPLOGONEON.webp" type="image/webp">
-    <source srcset="KSGROUPLOGONEON.png" type="image/png">
-    <img src="KSGROUPLOGONEON.png" alt="Logo KSGROUP">
-</picture>
+    <picture>
+        <source srcset="KSGROUPLOGO.webp" type="image/webp">
+        <source srcset="KSGROUPLOGO.png" type="image/png">
+        <img src="KSGROUPLOGO.png" alt="Logo KSGROUP">
+    </picture>
 </body>
 </html>

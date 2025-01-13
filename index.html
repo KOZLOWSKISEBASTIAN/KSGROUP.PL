@@ -17,7 +17,7 @@
             background-color: #ffffff;
             transition: background-color 0.3s ease;
         }
-        body:hover {
+        body.hover-active {
             background-color: #000000;
         }
         img {
@@ -29,14 +29,11 @@
             filter: brightness(0);
             transition: filter 0.3s ease;
         }
-        body:hover img, img:hover {
+        body.hover-active img, img:hover {
             filter: brightness(1) invert(1);
         }
         @media (max-width: 768px) {
-            body:active {
-                background-color: #000000;
-            }
-            img:active {
+            img.touch-active {
                 filter: brightness(1) invert(1);
             }
             img {
@@ -50,7 +47,25 @@
     <picture>
         <source srcset="KSGROUPLOGO.webp" type="image/webp">
         <source srcset="KSGROUPLOGO.png" type="image/png">
-        <img src="KSGROUPLOGO.png" alt="KSGROUP LOGO">
+        <img src="KSGROUPLOGO.png" alt="KSGROUP LOGO" id="logo">
     </picture>
+<script>
+        const body = document.body;
+        const img = document.getElementById('logo');
+        img.addEventListener('touchstart', function() {
+            body.classList.add('hover-active');
+            img.classList.add('touch-active');
+        });
+        img.addEventListener('touchend', function() {
+            body.classList.remove('hover-active');
+            img.classList.remove('touch-active');
+        });
+        body.addEventListener('mouseover', function() {
+            body.classList.add('hover-active');
+        });
+        body.addEventListener('mouseout', function() {
+            body.classList.remove('hover-active');
+        });
+ </script>
 </body>
 </html>

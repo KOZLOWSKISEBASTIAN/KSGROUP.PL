@@ -16,12 +16,12 @@ body.hover-active {
     background-color: #000000;
 }
 
-/* Stylizacja SVG, aby była responsywna */
+/* Stylizacja SVG, żeby było responsywne */
 svg {
-    width: 90%;
+    width: 100%;
     height: auto;
     max-width: 660px; /* Maksymalna szerokość dla większych ekranów */
-    max-height: 280px; /* Maksymalna wysokość dla większych ekranów */
+    max-height: 280px; /* Maksymalna wysokość */
     transition: filter 0.3s ease;
 }
 

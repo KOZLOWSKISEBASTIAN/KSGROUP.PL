@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="11;url=https://kozlowskisebastian.pl/">
+    <meta http-equiv="refresh" content="6;url=https://kozlowskisebastian.pl/">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -43,6 +43,9 @@
                 object-fit: contain;
                 display: block;
             }
+            body.hover-active img, img:hover {
+                filter: brightness(1) invert(1);
+            }
         }
     </style>
 </head>
@@ -55,36 +58,26 @@
     <script>
         const body = document.body;
         const img = document.getElementById('KSGROUPLOGO');
-        let isActive = false;
-
-        function toggleEffect() {
-            if (isActive) {
-                body.classList.remove('hover-active');
-                img.style.filter = 'brightness(0)'; // Reset the image to its original state
-                isActive = false;
-            } else {
-                body.classList.add('hover-active');
-                img.style.filter = 'brightness(1) invert(1)'; // Apply effect
-                isActive = true;
-            }
+        function activateEffect() {
+            body.classList.add('hover-active');
         }
-
+        function deactivateEffect() {
+            body.classList.remove('hover-active');
+        }
         img.addEventListener('touchstart', function() {
-            toggleEffect();
+            activateEffect();
         });
-
+        img.addEventListener('touchend', function() {
+            setTimeout(function() {
+                deactivateEffect();
+                img.style.filter = 'brightness(0)';
+            }, 200);
+        });
         body.addEventListener('mouseover', function() {
-            if (!isActive) {
-                body.classList.add('hover-active');
-                img.style.filter = 'brightness(1) invert(1)'; // Apply effect
-            }
+            activateEffect();
         });
-
         body.addEventListener('mouseout', function() {
-            if (!isActive) {
-                body.classList.remove('hover-active');
-                img.style.filter = 'brightness(0)'; // Reset the image to its original state
-            }
+            deactivateEffect();
         });
     </script>
 </body>

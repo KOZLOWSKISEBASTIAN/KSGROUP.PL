@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="6;url=https://kozlowskisebastian.pl/">
+    <meta http-equiv="refresh" content="14;url=https://kozlowskisebastian.pl/">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -14,11 +14,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Początkowe białe tło */
             transition: background-color 0.3s ease;
         }
         body.hover-active {
-            background-color: #000000;
+            background-color: #000000; /* Po dotknięciu tło zmienia się na czarne */
         }
         img {
             max-width: 90%;
@@ -26,11 +26,11 @@
             height: auto;
             width: auto;
             object-fit: contain;
-            filter: brightness(0);
+            filter: brightness(0); /* Początkowy stan: czarna grafika */
             transition: filter 0.3s ease;
         }
         body.hover-active img, img:hover {
-            filter: brightness(1) invert(1);
+            filter: brightness(1) invert(1); /* Po dotknięciu: biała grafika */
         }
         @media (max-width: 768px) {
             html, body {
@@ -44,7 +44,7 @@
                 display: block;
             }
             body.hover-active img, img:hover {
-                filter: brightness(1) invert(1);
+                filter: brightness(1) invert(1); /* Po dotknięciu: biała grafika */
             }
         }
     </style>
@@ -58,26 +58,33 @@
     <script>
         const body = document.body;
         const img = document.getElementById('KSGROUPLOGO');
+        
+        function resetImage() {
+            // Resetowanie tła i obrazu do początkowego stanu
+            body.classList.remove('hover-active');
+            img.style.filter = 'brightness(0)'; /* Początkowy stan: czarna grafika */
+        }
+        
         function activateEffect() {
             body.classList.add('hover-active');
+            img.style.filter = 'brightness(1) invert(1)'; /* Po dotknięciu: biała grafika */
         }
-        function deactivateEffect() {
-            body.classList.remove('hover-active');
-        }
+        
         img.addEventListener('touchstart', function() {
-            activateEffect();
+            // Przełączanie między stanami
+            if (body.classList.contains('hover-active')) {
+                resetImage();
+            } else {
+                activateEffect();
+            }
         });
-        img.addEventListener('touchend', function() {
-            setTimeout(function() {
-                deactivateEffect();
-                img.style.filter = 'brightness(0)';
-            }, 200);
-        });
+
         body.addEventListener('mouseover', function() {
             activateEffect();
         });
+
         body.addEventListener('mouseout', function() {
-            deactivateEffect();
+            resetImage();
         });
     </script>
 </body>

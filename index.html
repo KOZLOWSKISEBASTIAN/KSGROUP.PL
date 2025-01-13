@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5;url=https://kozlowskisebastian.pl/">
+    <meta http-equiv="refresh" content="4;url=https://kozlowskisebastian.pl/">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -33,12 +33,18 @@
             filter: brightness(1) invert(1);
         }
         @media (max-width: 768px) {
-            img.touch-active {
-                filter: brightness(1) invert(1);
+            html, body {
+                justify-content: center;
+                align-items: center;
             }
             img {
-                max-width: 80%;
-                max-height: 80%;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+            body.hover-active img, img:hover {
+                filter: brightness(1) invert(1);
             }
         }
     </style>
@@ -54,12 +60,9 @@
         const img = document.getElementById('KSGROUPLOGO');
         function activateEffect() {
             body.classList.add('hover-active');
-            img.classList.add('touch-active');
         }
         function deactivateEffect() {
             body.classList.remove('hover-active');
-            img.classList.remove('touch-active');
-            img.style.filter = 'brightness(0)';
         }
         img.addEventListener('touchstart', function() {
             activateEffect();

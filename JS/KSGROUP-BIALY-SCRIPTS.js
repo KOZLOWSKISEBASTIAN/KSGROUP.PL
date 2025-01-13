@@ -1,37 +1,36 @@
 const body = document.body;
-const imageElement = document.getElementById('krakow');
+const imageContainer = document.getElementById('krakow');
 
-// Wykrywanie urządzeń mobilnych
-const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-// Ustawienie odpowiedniego obrazu
-function setImageSource() {
-    if (isMobile) {
-        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-WEBP.webp'; // Dla urządzeń mobilnych
-    } else {
-        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-SVG.svg'; // Dla desktopów
-    }
+// Funkcja do wykrywania urządzenia mobilnego
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /android|ipad|iphone|ipod|blackberry|bb10|windows phone|mobile/i.test(userAgent);
 }
 
-// Wywołanie funkcji na starcie
-window.addEventListener('load', function() {
-    setImageSource();
-});
+// Funkcja ustawiająca grafikę
+function setImage() {
+    const isMobile = isMobileDevice();
+    const imageUrl = isMobile
+        ? "GRAFIKA/KSGROUP-BIALY-WEBP.webp" // Dla urządzeń mobilnych
+        : "GRAFIKA/KSGROUP-BIALY-SVG.svg"; // Dla komputerów
+
+    imageContainer.setAttribute("src", imageUrl);
+}
 
 // Funkcja resetująca efekt
 function resetEffect() {
     body.classList.remove('hover-active');
-    imageElement.style.filter = 'brightness(0)';
+    imageContainer.style.filter = 'brightness(0)';
 }
 
 // Funkcja aktywująca efekt
 function activateEffect() {
     body.classList.add('hover-active');
-    imageElement.style.filter = 'brightness(1) invert(1)';
+    imageContainer.style.filter = 'brightness(1) invert(1)';
 }
 
 // Reakcja na dotyk na urządzeniach mobilnych
-imageElement.addEventListener('touchstart', function () {
+imageContainer.addEventListener('touchstart', function () {
     if (body.classList.contains('hover-active')) {
         resetEffect();
     } else {
@@ -48,3 +47,6 @@ body.addEventListener('mouseover', function () {
 body.addEventListener('mouseout', function () {
     resetEffect();
 });
+
+// Ustaw grafikę na podstawie urządzenia
+setImage();

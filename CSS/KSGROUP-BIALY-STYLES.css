@@ -31,3 +31,11 @@ body.hover-active #krakow,
 #krakow:hover {
     filter: brightness(1) invert(1);
 }
+
+/* Responsywność */
+@media (max-width: 768px) {
+    #krakow {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

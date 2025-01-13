@@ -9,8 +9,8 @@ function isMobileDevice() {
 function setImage() {
     const isMobile = isMobileDevice();
     const imageUrl = isMobile
-        ? "GRAFIKA/KSGROUP-BIALY-WEBP.webp" // Dla urządzeń mobilnych
-        : "GRAFIKA/KSGROUP-BIALY-SVG.svg"; // Dla komputerów
+        ? "https://ksgroup.pl/GRAFIKA/KSGROUP-BIALY-WEBP.webp" // Dla urządzeń mobilnych
+        : "https://ksgroup.pl/GRAFIKA/KSGROUP-BIALY-SVG.svg"; // Dla komputerów
 
     imageContainer.setAttribute("src", imageUrl);
 }

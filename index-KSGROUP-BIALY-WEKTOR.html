@@ -7,21 +7,10 @@
     <link rel="stylesheet" href="CSS/KSGROUP-BIALY-STYLES.css">
 </head>
 <body>
-    <!-- Obraz dla desktopów -->
-    <div id="desktop-graphic" class="graphic-container">
-        <object type="image/svg+xml" data="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" id="KSGROUP-BIALY-WEKTOR-SVG" class="desktop-svg">
-            <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
-        </object>
-    </div>
-
-    <!-- Obraz dla urządzeń mobilnych -->
-    <div id="mobile-graphic" class="graphic-container">
-        <picture>
-            <source media="(max-width: 768px)" type="image/webp" srcset="GRAFIKA/KSGROUP-BIALY-WEBP.webp">
-            <img src="GRAFIKA/KSGROUP-BIALY-WEBP.webp" alt="KSGROUP: LOGO" class="mobile-webp">
-        </picture>
-    </div>
-
+    <picture id="responsive-graphic">
+        <source media="(max-width: 768px)" type="image/webp" srcset="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.webp">
+        <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
+    </picture>
     <script src="JS/KSGROUP-BIALY-SCRIPTS.js"></script>
 </body>
 </html>

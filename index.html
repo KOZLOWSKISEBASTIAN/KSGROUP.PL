@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="8;url=https://kozlowskisebastian.pl/">
+    <meta http-equiv="refresh" content="7;url=https://kozlowskisebastian.pl/">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -43,9 +43,6 @@
                 object-fit: contain;
                 display: block;
             }
-            body.hover-active img, img:hover {
-                filter: brightness(1) invert(1);
-            }
         }
     </style>
 </head>
@@ -58,23 +55,32 @@
     <script>
         const body = document.body;
         const img = document.getElementById('KSGROUPLOGO');
-        function activateEffect() {
-            body.classList.add('hover-active');
+        let isActive = false;
+
+        function toggleEffect() {
+            if (isActive) {
+                body.classList.remove('hover-active');
+                isActive = false;
+            } else {
+                body.classList.add('hover-active');
+                isActive = true;
+            }
         }
-        function deactivateEffect() {
-            body.classList.remove('hover-active');
-        }
+
         img.addEventListener('touchstart', function() {
-            activateEffect();
+            toggleEffect();
         });
-        img.addEventListener('touchend', function() {
-            setTimeout(deactivateEffect, 200);
-        });
+
         body.addEventListener('mouseover', function() {
-            activateEffect();
+            if (!isActive) {
+                body.classList.add('hover-active');
+            }
         });
+
         body.addEventListener('mouseout', function() {
-            deactivateEffect();
+            if (!isActive) {
+                body.classList.remove('hover-active');
+            }
         });
     </script>
 </body>

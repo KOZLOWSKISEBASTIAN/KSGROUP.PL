@@ -17,7 +17,7 @@ body.hover-active {
 }
 
 /* Stylizacja grafiki */
-#KSGROUP-BIALY-SVG {
+#krakow {
     max-width: 90%;
     max-height: 90%;
     height: auto;
@@ -27,18 +27,7 @@ body.hover-active {
 }
 
 /* Efekty zmiany wyglądu przy najechaniu */
-body.hover-active #KSGROUP-BIALY-SVG,
-#KSGROUP-BIALY-SVG:hover {
+body.hover-active #krakow,
+#krakow:hover {
     filter: brightness(1) invert(1);
-}
-
-/* Dostosowanie dla mobilnych */
-@media (max-width: 768px) {
-    #KSGROUP-BIALY-SVG {
-        display: none; /* Ukryj SVG */
-    }
-
-    #krakow source {
-        display: block; /* Wymuszaj wyświetlenie WEBP */
-    }
 }

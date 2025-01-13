@@ -17,13 +17,9 @@
             background-color: #ffffff;
             transition: background-color 0.3s ease;
         }
-
-        /* Efekt na desktopie - zmiana tła po hover */
         body.hover-active {
             background-color: #000000;
         }
-
-        /* Stylowanie obrazka */
         img {
             max-width: 90%;
             max-height: 90%;
@@ -33,22 +29,15 @@
             filter: brightness(0);
             transition: filter 0.3s ease;
         }
-
-        /* Efekt na hover dla obrazu */
         body.hover-active img, img:hover {
             filter: brightness(1) invert(1);
         }
-
-        /* Dostosowanie dla urządzeń mobilnych */
         @media (max-width: 768px) {
-            /* Zmiana filtra dla obrazu po dotknięciu */
             img.touch-active {
                 filter: brightness(1) invert(1);
             }
-
-            /* Dostosowanie wielkości obrazka dla mniejszych ekranów */
             img {
-                max-width: 80%; /* zmniejszenie obrazu na mobilkach */
+                max-width: 80%;
                 max-height: 80%;
             }
         }
@@ -58,42 +47,29 @@
     <picture>
         <source srcset="KSGROUPLOGO.webp" type="image/webp">
         <source srcset="KSGROUPLOGO.png" type="image/png">
-        <img src="KSGROUPLOGO.png" alt="KSGROUP LOGO" id="logo">
+        <img src="KSGROUPLOGO.png" alt="KSGROUP LOGO" id="KSGROUPLOGO">
     </picture>
-
     <script>
-        // Obsługuje interakcje na urządzeniach mobilnych
         const body = document.body;
-        const img = document.getElementById('logo');
-
-        // Funkcja do aktywacji efektu
+        const img = document.getElementById('KSGROUPLOGO');
         function activateEffect() {
             body.classList.add('hover-active');
             img.classList.add('touch-active');
         }
-
-        // Funkcja do dezaktywacji efektu
         function deactivateEffect() {
             body.classList.remove('hover-active');
             img.classList.remove('touch-active');
-            img.style.filter = 'brightness(0)'; // Przywrócenie czarnego obrazu
+            img.style.filter = 'brightness(0)';
         }
-
-        // Obsługuje interakcje dotykowe
         img.addEventListener('touchstart', function() {
             activateEffect();
         });
-
-        // Usuwanie efektu po zakończeniu dotyku
         img.addEventListener('touchend', function() {
-            setTimeout(deactivateEffect, 200);  // Opóźnienie, aby efekt był widoczny przez chwilę
+            setTimeout(deactivateEffect, 200);
         });
-
-        // Obsługuje interakcje na komputerach, działa na hover
         body.addEventListener('mouseover', function() {
             activateEffect();
         });
-
         body.addEventListener('mouseout', function() {
             deactivateEffect();
         });

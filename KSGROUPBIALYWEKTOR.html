@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KSGROUP BIAŁY WEKTOR</title>
+    <title>KSGROUP: BIAŁY WEKTOR</title>
     <style>
         html, body {
             margin: 0;
@@ -27,77 +27,25 @@
             filter: brightness(0);
             transition: filter 0.3s ease;
         }
-        body.hover-active svg,
-        svg:hover {
+        body.hover-active svg, svg:hover {
             filter: brightness(1) invert(1);
-        }
-        @media (max-width: 768px) {
-            svg {
-                max-width: 100%;
-                max-height: 100%;
-            }
         }
     </style>
 </head>
 <body>
-    <svg
-       width="660"
-       height="280"
-       version="1.1"
-       id="SVG-KSGROUPBIALYWEKTOR"
-       xmlns="http://www.w3.org/2000/svg">
-        <defs id="DEFS-KSGROUPBIALYWEKTOR">
-            <linearGradient id="LINEARGRADIENT-KSGROUPBIALYWEKTOR">
-                <stop
-                   style="stop-color:#000000;stop-opacity:1;"
-                   offset="0"
-                   id="STOP-KSGROUPBIALYWEKTOR" />
-            </linearGradient>
-        </defs>
-        <rect
-           width="650"
-           height="270"
-           x="5"
-           y="5"
-           style="fill:none;stroke:#000000;stroke-width:10;stroke-opacity:1"
-           id="RECT-KSGROUPBIALYWEKTOR" />
-        <text
-           x="7.718122"
-           y="257.15356"
-           style="font-style:normal;font-weight:normal;font-size:118.364px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.391;stroke-dasharray:none"
-           id="TEXT-KSGROUPBIALYWEKTOR"
-           transform="scale(0.97432005,1.0263568)">
-            <tspan
-               x="7.718122"
-               y="257.15356"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:345.49px;line-height:125%;font-family:Highrise;-inkscape-font-specification:'Highrise, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:1.391;stroke-dasharray:none"
-               id="TSPAN-KSGROUPBIALYWEKTOR">KSGROUP</tspan>
-        </text>
+    <svg width="660" height="280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="650" height="270" x="5" y="5" style="fill:none;stroke:#000000;stroke-width:10"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style="font-size:100px;fill:#000000;">KSGROUP</text>
     </svg>
     <script>
         const body = document.body;
-        const svg = document.getElementById('SVG-KSGROUPBIALYWEKTOR');
-        function resetEffect() {
-            body.classList.remove('hover-active');
-            svg.style.filter = 'brightness(0)';
+        const svg = document.querySelector('svg');
+        function toggleEffect() {
+            body.classList.toggle('hover-active');
+            svg.style.filter = body.classList.contains('hover-active') ? 'brightness(1) invert(1)' : 'brightness(0)';
         }
-        function activateEffect() {
-            body.classList.add('hover-active');
-            svg.style.filter = 'brightness(1) invert(1)';
-        }
-        svg.addEventListener('touchstart', function() {
-            if (body.classList.contains('hover-active')) {
-                resetEffect();
-            } else {
-                activateEffect();
-            }
-        });
-        body.addEventListener('mouseover', function() {
-            activateEffect();
-        });
-        body.addEventListener('mouseout', function() {
-            resetEffect();
-        });
+        body.addEventListener('mouseover', toggleEffect);
+        body.addEventListener('mouseout', toggleEffect);
     </script>
 </body>
 </html>

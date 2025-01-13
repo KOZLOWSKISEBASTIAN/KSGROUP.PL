@@ -16,7 +16,7 @@ body.hover-active {
     background-color: #000000;
 }
 
-/* Stylizacja SVG */
+/* Stylizacja grafiki */
 #KSGROUP-BIALY-SVG {
     max-width: 90%;
     max-height: 90%;
@@ -35,6 +35,12 @@ body.hover-active #KSGROUP-BIALY-SVG,
 /* Responsywność */
 @media (max-width: 768px) {
     #KSGROUP-BIALY-SVG {
-        display: none; /* Ukrywa SVG na urządzeniach mobilnych */
+        display: none; /* Ukryj SVG w wersji mobilnej */
+    }
+
+    #krakow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="CSS/KSGROUP-BIALY-STYLES.css">
 </head>
 <body>
-    <object type="image/svg+xml" data="GRAFIKA/KSGROUP-BIALY-SVG.svg" id="KSGROUP-BIALY-SVG">
-        <img src="GRAFIKA/KSGROUP-BIALY-SVG.svg" alt="KSGROUP: LOGO">
-    </object>
+    <div id="warszawa">
+        <!-- Kontener dla obrazu, który zmienia się w zależności od urządzenia -->
+        <picture id="krakow">
+            <source srcset="GRAFIKA/KSGROUP-BIALY-SVG.webp" type="image/webp" media="(max-width: 768px)">
+            <img src="GRAFIKA/KSGROUP-BIALY-SVG.svg" alt="KSGROUP: LOGO" id="KSGROUP-BIALY-SVG">
+        </picture>
+    </div>
     <script src="JS/KSGROUP-BIALY-SCRIPTS.js"></script>
 </body>
 </html>

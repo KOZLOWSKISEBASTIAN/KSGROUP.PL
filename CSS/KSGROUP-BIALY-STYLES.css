@@ -16,16 +16,29 @@ body.hover-active {
     background-color: #000000;
 }
 
-/* Ukrycie grafiki dla odpowiednich urządzeń */
-#desktop-graphic {
-    display: block;
-}
-#mobile-graphic {
+/* Grafiki dla desktopów i mobilnych */
+.graphic-container {
     display: none;
 }
 
-/* Stylizacja SVG */
-#KSGROUP-BIALY-WEKTOR-SVG {
+/* Widoczność grafiki na desktopie */
+#desktop-graphic {
+    display: block;
+}
+
+/* Widoczność grafiki na urządzeniach mobilnych */
+@media (max-width: 768px) {
+    #desktop-graphic {
+        display: none;
+    }
+
+    #mobile-graphic {
+        display: block;
+    }
+}
+
+/* Stylizacja SVG na desktopie */
+.desktop-svg {
     max-width: 90%;
     max-height: 90%;
     height: auto;
@@ -35,17 +48,14 @@ body.hover-active {
 }
 
 /* Efekty zmiany wyglądu przy najechaniu */
-body.hover-active #KSGROUP-BIALY-WEKTOR-SVG,
-#KSGROUP-BIALY-WEKTOR-SVG:hover {
+body.hover-active .desktop-svg {
     filter: brightness(1) invert(1);
 }
 
-/* Responsywność: Ukrywanie grafiki desktopowej na urządzeniach mobilnych */
-@media (max-width: 768px) {
-    #desktop-graphic {
-        display: none;
-    }
-    #mobile-graphic {
-        display: block;
-    }
+/* Obraz WebP na mobilnych */
+.mobile-webp {
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    width: auto;
 }

@@ -5,11 +5,16 @@ const imageElement = document.getElementById('krakow');
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 // Ustawienie odpowiedniego obrazu
-if (isMobile) {
-    imageElement.src = 'GRAFIKA/KSGROUP-BIALY-WEBP.webp';
-} else {
-    imageElement.src = 'GRAFIKA/KSGROUP-BIALY-SVG.svg';
+function setImageSource() {
+    if (isMobile) {
+        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-WEBP.webp'; // Zmieniamy na WEBP na urządzeniach mobilnych
+    } else {
+        imageElement.src = 'GRAFIKA/KSGROUP-BIALY-SVG.svg'; // Zostawiamy SVG dla desktopów
+    }
 }
+
+// Wywołanie funkcji na starcie
+setImageSource();
 
 // Funkcja resetująca efekt
 function resetEffect() {

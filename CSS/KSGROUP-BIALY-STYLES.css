@@ -16,6 +16,16 @@ body.hover-active {
     background-color: #000000;
 }
 
+/* Kontener obrazu */
+#warszawa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ustawienie wysokości kontenera na 100% */
+    width: 100%; /* Ustawienie szerokości kontenera na 100% */
+    position: relative; /* Pozycjonowanie względem rodzica */
+}
+
 /* Stylizacja obrazka */
 #krakow {
     max-width: 90%;

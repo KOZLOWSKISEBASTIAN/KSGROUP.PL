@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="4;url=https://kozlowskisebastian.pl/">
+    <meta http-equiv="refresh" content="10;url=https://kozlowskisebastian.pl/">
     <title>KSGROUP</title>
     <style>
         html, body {
@@ -26,11 +26,11 @@
             height: auto;
             width: auto;
             object-fit: contain;
-            filter: brightness(0);
+            filter: brightness(0); /* Obraz początkowo czarny */
             transition: filter 0.3s ease;
         }
         body.hover-active img, img:hover {
-            filter: brightness(1) invert(1);
+            filter: brightness(1) invert(1); /* Po najechaniu obraz zmienia się na biały */
         }
         @media (max-width: 768px) {
             html, body {
@@ -44,7 +44,7 @@
                 display: block;
             }
             body.hover-active img, img:hover {
-                filter: brightness(1) invert(1);
+                filter: brightness(1) invert(1); /* Po dotknięciu obraz ma być biały */
             }
         }
     </style>
@@ -58,23 +58,29 @@
     <script>
         const body = document.body;
         const img = document.getElementById('KSGROUPLOGO');
+
         function activateEffect() {
-            body.classList.add('hover-active');
+            body.classList.add('hover-active'); // Zmiana tła na czarne
         }
+
         function deactivateEffect() {
-            body.classList.remove('hover-active');
+            body.classList.remove('hover-active'); // Przywrócenie tła białego
         }
+
         img.addEventListener('touchstart', function() {
-            activateEffect();
+            activateEffect(); // Po dotknięciu tło zmienia się na czarne, obraz na biały
         });
+
         img.addEventListener('touchend', function() {
-            setTimeout(deactivateEffect, 200);
+            setTimeout(deactivateEffect, 200); // Po zakończeniu dotyku wraca do białego tła i czarnej grafiki
         });
+
         body.addEventListener('mouseover', function() {
-            activateEffect();
+            activateEffect(); // Po najechaniu tło zmienia się na czarne, obraz na biały
         });
+
         body.addEventListener('mouseout', function() {
-            deactivateEffect();
+            deactivateEffect(); // Po usunięciu kursora tło wraca do białego
         });
     </script>
 </body>

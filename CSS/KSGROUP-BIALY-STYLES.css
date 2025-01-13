@@ -17,7 +17,7 @@ body.hover-active {
 }
 
 /* Stylizacja SVG */
-svg {
+#KSGROUP-BIALY-SVG {
     max-width: 90%;
     max-height: 90%;
     height: auto;
@@ -27,33 +27,14 @@ svg {
 }
 
 /* Efekty zmiany wyglądu przy najechaniu */
-body.hover-active svg,
-svg:hover {
+body.hover-active #KSGROUP-BIALY-SVG,
+#KSGROUP-BIALY-SVG:hover {
     filter: brightness(1) invert(1);
 }
 
-/* Grafika WEBP - domyślnie ukryta */
-#krakow {
-    display: none;
-    max-width: 90%;
-    max-height: 90%;
-    height: auto;
-    width: auto;
-    filter: brightness(0);
-    transition: filter 0.3s ease;
-}
-
-/* Stylizacja dla urządzeń mobilnych */
+/* Responsywność */
 @media (max-width: 768px) {
     #KSGROUP-BIALY-SVG {
-        display: none;
+        display: none; /* Ukrywa SVG na urządzeniach mobilnych */
     }
-    #krakow {
-        display: block;
-    }
-}
-
-/* Efekty zmiany wyglądu przy najechaniu na mobilnych */
-body.hover-active #krakow {
-    filter: brightness(1) invert(1);
 }

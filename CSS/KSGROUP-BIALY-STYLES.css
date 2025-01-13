@@ -16,29 +16,8 @@ body.hover-active {
     background-color: #000000;
 }
 
-/* Grafiki dla desktopów i mobilnych */
-.graphic-container {
-    display: none;
-}
-
-/* Widoczność grafiki na desktopie */
-#desktop-graphic {
-    display: block;
-}
-
-/* Widoczność grafiki na urządzeniach mobilnych */
-@media (max-width: 768px) {
-    #desktop-graphic {
-        display: none;
-    }
-
-    #mobile-graphic {
-        display: block;
-    }
-}
-
-/* Stylizacja SVG na desktopie */
-.desktop-svg {
+/* Stylizacja grafiki */
+#responsive-graphic {
     max-width: 90%;
     max-height: 90%;
     height: auto;
@@ -48,14 +27,13 @@ body.hover-active {
 }
 
 /* Efekty zmiany wyglądu przy najechaniu */
-body.hover-active .desktop-svg {
+body.hover-active #responsive-graphic img {
     filter: brightness(1) invert(1);
 }
 
-/* Obraz WebP na mobilnych */
-.mobile-webp {
-    max-width: 90%;
-    max-height: 90%;
-    height: auto;
-    width: auto;
+/* Responsywność dla urządzeń mobilnych */
+@media (max-width: 768px) {
+    #responsive-graphic img {
+        display: block;
+    }
 }

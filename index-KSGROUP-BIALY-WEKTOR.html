@@ -8,10 +8,12 @@
 </head>
 <body>
     <picture>
+        <!-- Na urządzeniach mobilnych ładuje WebP -->
         <source media="(max-width: 768px)" type="image/webp" srcset="GRAFIKA/KSGROUP-BIALY-WEBP.webp">
-        <object type="image/svg+xml" data="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" id="KSGROUP-BIALY-WEKTOR-SVG">
-            <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
-        </object>
+        <!-- SVG dla desktopów -->
+        <source media="(min-width: 769px)" type="image/svg+xml" srcset="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg">
+        <!-- Zapasowy obraz, jeśli WebP lub SVG się nie załadują -->
+        <img src="GRAFIKA/KSGROUP-BIALY-WEKTOR-SVG.svg" alt="KSGROUP: LOGO">
     </picture>
     <script src="JS/KSGROUP-BIALY-SCRIPTS.js"></script>
 </body>

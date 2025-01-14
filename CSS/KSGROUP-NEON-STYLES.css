@@ -38,7 +38,7 @@ body.hover-active {
 /* Efekty zmiany wyglądu przy najechaniu */
 body.hover-active #KSGROUP-LOGO-SVG-WEBP,
 #KSGROUP-LOGO-SVG-WEBP:hover {
-    filter: brightness(1) invert(23%) sepia(198%) saturate(5000%) hue-rotate(300deg);
+    filter: brightness(0) saturate(100%) invert(24%) sepia(75%) saturate(5815%) hue-rotate(293deg) brightness(111%) contrast(129%);
 }
 
 /* Responsywność */
